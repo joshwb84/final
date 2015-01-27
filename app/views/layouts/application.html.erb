@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mystopiacheckout</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  <a href="#Top"></a>
+  </head>
+<body>
+<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Equipment Checkout System</a>
+      </div>
+      <div class="navbar-collapse collapse navbar-default-collapse">
+         <ul class="nav navbar-nav pull-right">
+         <li><a href="/about">About</a></li>
+        <li><a href="/signin">Sign in</a></li>        
+        </ul>
+      </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+  </div><!-- /.navbar -->
+  <% if current_page?(root_path) %>
+  <% if content_for?(:jumbotron) %>
+    <div class="jumbotron">
+      <div class="container">
+        <%= yield :jumbotron %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="container">
+<% end %>
+
+<%= yield %>
+<footer>
+    <hr>
+      <p class="pull-right">
+        <%= link_to '<span class="glyphicon-class glyphicon glyphicon-chevron-up"></span> Back to top'.html_safe, '#Top' %>
+      </p>
+      <p>
+        &copy; 2015 
+        &bull;
+        <a href="/blog">Blog</a></li>
+        &bull;
+        <a href="/terms">Terms</a></li>
+      </p>
+    </footer>
+     </div> <!-- /container -->
+
+</body>
+</html>

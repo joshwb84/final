@@ -1,0 +1,29 @@
+Category:
+  category: string
+
+User:
+  name: string
+  playa_name: string
+  email: string
+  password: string
+
+Rental:
+  item_id: integer
+  user_id: integer
+  rental_date: string
+  return_date: string
+
+Comment:
+  item_id: integer
+  user_id: integer
+  remark: text
+  
+Item:
+  category_id: integer
+  name: string
+  description: text
+  storage_home: string
+  identifier: string
+  owner: string
+  purchase_date: string
+  purchase_price: string
