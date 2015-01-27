@@ -54,4 +54,4 @@ comment_three = Comment.create(item_id: item_four.id,user_id: user_three.id,rema
 comment_four = Comment.create(item_id: item_two.id,user_id: user_five.id,remark: "a few LEDs missing")
 comment_five = Comment.create(item_id: item_three.id,user_id: user_two.id,remark: "Broken")
 
-puts "There are now #{Rental.where(return_date =>"")} items checked out and #{Item.count} items in the database, by #{User.count} users."
+puts "A total of #{Item.count} items are in the database. #{Rental.count} rentals have occurred and there are #{User.count} users registered."
