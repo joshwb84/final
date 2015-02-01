@@ -1,11 +1,21 @@
 Category:
-  category: string
+  name: string
 
 User:
   name: string
   playa_name: string
   email: string
   password: string
+
+Item:
+  category_id: integer
+  name: string
+  description: text
+  storage: string
+  identifier: string
+  owner: string
+  purchase_date: string
+  purchase_price: string
 
 Rental:
   item_id: integer
@@ -18,12 +28,3 @@ Comment:
   user_id: integer
   remark: text
   
-Item:
-  category_id: integer
-  name: string
-  description: text
-  storage_home: string
-  identifier: string
-  owner: string
-  purchase_date: string
-  purchase_price: string

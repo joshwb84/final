@@ -1,0 +1,47 @@
+<% provide(:title, 'Events') %>
+  
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+    <b>
+      Item Name: </b>
+      <%= @item.name %><br>
+      <b>
+      Category: </b>
+      <%= @category.name %><br>
+      <b>
+      Identifier date: </b>
+      <%= @item.identifier %><br>
+      <b>
+      Item description:</b>
+      <%= @item.description %><br>
+
+<br>
+<b>Comments:</b>
+<% @comments.each do |poop| %>
+<p><% @users.each do |pee| %><%= pee.name %>
+<% end%> says: </p>
+<p class="text-warning"><%= poop.remark %></p>
+<% end%>
+
+
+
+    </div>
+    <div class="col-md-6">
+      <b>
+      Storage: </b>
+      <%= @item.storage %><br>
+      <b>
+      Owner: </b>
+      <%= @item.owner %><br>
+      <b>
+      purchase date: </b>
+      <%= @item.purchase_date %><br>
+      <b>
+      Purchase price: </b>
+      <%= @item.purchase_price %><br>
+    </div>
+  </div>
+</div>

@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 0) do
 
   create_table "categories", force: :cascade do |t|
-    t.string "category"
+    t.string "name"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "category_id"
     t.string  "name"
     t.text    "description"
-    t.string  "storage_home"
     t.string  "identifier"
     t.string  "owner"
     t.string  "purchase_date"
     t.string  "purchase_price"
+    t.string  "storage"
   end
 
   add_index "items", ["category_id"], name: "index_items_on_category_id"

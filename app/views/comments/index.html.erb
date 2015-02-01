@@ -1,0 +1,15 @@
+<% provide(:title, 'Comments') %>
+
+
+<h1> There are <b><%= @comments.count %></b> comments on this site </h1>
+  <% @comments.each do |item| %>
+
+    <tr>
+      
+      
+      <%= item.user_id %></td>
+      <td><%= item.item_id %></td>
+      <td><%= item.remark %></td>
+      
+    </tr>
+<% end %>

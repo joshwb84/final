@@ -16,9 +16,9 @@ Comment.delete_all
 
 # Create the category
 puts "Creating categories..."
-electrical = Category.create(category: "Electrical equipment")
-sound = Category.create(category: "Sound equipment")
-rcc = Category.create(category: "RCC equipment")
+electrical = Category.create(name: "Electrical equipment")
+sound = Category.create(name: "Sound equipment")
+rcc = Category.create(name: "RCC equipment")
 
 # Create the users
 puts "Creating your Users dog..."
@@ -31,11 +31,11 @@ user_five = User.create(name: "Laura bobbit",playa_name: "hot pocket",email: "la
 
 # Create the items
 puts "Creating your items..."
-item_one = Item.create(category_id: rcc.id,name: "wagon cover",description: "Cloth cover",storage_home: "storage facility",identifier: "xasdnwu29348",owner: "mystopia",purchase_date: "1-21-13",purchase_price:"12.99")
-item_two = Item.create(category_id: electrical.id,name: "electrical cord",description: "orange",storage_home: "vacaville",identifier: "xtec9348",owner: "james",purchase_date: "1-11-12",purchase_price:"14")
-item_three = Item.create(category_id: rcc.id,name: "Cowshead",description: "fragile",storage_home: "james",identifier: "xas34ssc48",owner: "bukstein",purchase_date: "12-11-14",purchase_price:"111.99")
-item_four = Item.create(category_id: sound.id,name: "Speakers",description: "blast 40db",storage_home: "storage facility2",identifier: "xasgrt3u29348",owner: "mystopia",purchase_date: "3-4-13",purchase_price:"donated")
-item_five = Item.create(category_id: electrical.id,name: "lights",description: "needs generator. no bulb",storage_home: "reno",identifier: "xasdsdt",owner: "papabear",purchase_date: "6-5-13",purchase_price:"87")
+item_one = Item.create(category_id: rcc.id,name: "wagon cover",description: "Cloth cover",storage: "storage facility",identifier: "xasdnwu29348",owner: "mystopia",purchase_date: "1-21-13",purchase_price:"12.99")
+item_two = Item.create(category_id: electrical.id,name: "electrical cord",description: "orange",storage: "vacaville",identifier: "xtec9348",owner: "james",purchase_date: "1-11-12",purchase_price:"14")
+item_three = Item.create(category_id: rcc.id,name: "Cowshead",description: "fragile",storage: "james",identifier: "xas34ssc48",owner: "bukstein",purchase_date: "12-11-14",purchase_price:"111.99")
+item_four = Item.create(category_id: sound.id,name: "Speakers",description: "blast 40db",storage: "storage facility2",identifier: "xasgrt3u29348",owner: "mystopia",purchase_date: "3-4-13",purchase_price:"donated")
+item_five = Item.create(category_id: electrical.id,name: "lights",description: "needs generator. no bulb",storage: "reno",identifier: "xasdsdt",owner: "papabear",purchase_date: "6-5-13",purchase_price:"87")
 
 # Create the rentals
 puts "Creating your rentals..."

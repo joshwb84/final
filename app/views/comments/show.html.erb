@@ -1,0 +1,15 @@
+<% provide(:title, 'comments') %>
+  
+
+  
+  <% @tag.each do |item| %>
+
+    <tr>
+      
+      
+      <%= item.user_id %></td>
+      <td><%= item.item_id %></td>
+      <td><%= item.remark %></td>
+      
+    </tr>
+<% end %>

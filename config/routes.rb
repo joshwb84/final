@@ -53,12 +53,17 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :items
+  resources :users
+   resources :comments
+
   root to: 'home#home'
   get '/about', to: 'home#about'
   get '/blog', to: 'home#blog'
   get '/terms', to: 'home#terms'
-  get '/signin', to: 'home#signin'
-  get '/register', to: 'home#register'
+  #get '/signin', to: 'home#signin'
+  #get '/register', to: 'home#register'
   get '/home', to: redirect('/')
   
 end
