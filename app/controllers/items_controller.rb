@@ -17,10 +17,11 @@ end
 
 def new
   @item = Item.new
+  @select = Category.all 
 end
 
 def create
-item_params = params.require(:item).permit(:name, :description, :storage, :identifier, :owner, :purchase_date, :purchase_price,)
+item_params = params.require(:item).permit(:category_id, :name, :description, :storage, :identifier, :owner, :purchase_date, :purchase_price,)
   Item.create(item_params)
     redirect_to items_path
 end
@@ -30,7 +31,7 @@ def edit
 end
 
 def update
-item_params = params.require(:item).permit(:name, :description, :storage, :identifier, :owner, :purchase_date, :purchase_price,)
+item_params = params.require(:item).permit(:category_id, :name, :description, :storage, :identifier, :owner, :purchase_date, :purchase_price,)
 @item = Item.find_by(id: params["id"])
   @item.update(item_params)
     redirect_to item_path

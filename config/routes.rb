@@ -62,8 +62,8 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
   get '/blog', to: 'home#blog'
   get '/terms', to: 'home#terms'
-  #get '/signin', to: 'home#signin'
-  #get '/register', to: 'home#register'
+  get '/signin', to: 'home#signin'
+  get '/register', to: 'home#register'
   get '/home', to: redirect('/')
   
 end

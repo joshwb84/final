@@ -14,6 +14,11 @@
 
          <%= form_for @item do |form|%>
 
+ <div class="form-group">
+    <%= form.label :category_id, class: "col-lg-2 control-label" %>
+   <%= form.select :category_id, Category.all.collect{ |c| [c.name, c.id] },class: "form-control" %>
+  </div>
+  
   <div class="form-group">
     <%= form.label :name, class: "col-lg-2 control-label" %>
     <%= form.text_field :name, class: "form-control", placeholder: "enter item name" %>
@@ -48,11 +53,15 @@
     <%= form.text_field :purchase_price, class: "form-control", placeholder: "how much was it? " %>
   </div>
 
-  <%= form.button 'Edit item in library', class: "btn btn-primary" %>
+  <%= form.button 'Save updated item', class: "btn btn-primary" %>
  </div>
 <% end %>
         
-    </div>
-    
+  <br>
+</div>
+   
+   <legend><h4>You can also delete the item from the library. This is unreversible. </h4> </legend> 
+<%= link_to "Delete", item_path, method: :delete, data: {confirm:'Are you really sure? THIS BUTTON WORKS'}, class: "btn btn-danger"  %> 
+  
 </body>
 </html>
