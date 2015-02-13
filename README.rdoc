@@ -1,5 +1,12 @@
 == README
 
+Changelog
+
+02/12/2015 Homework for Week 5
+
+Golden 7 action on items resource. Entered model associations
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

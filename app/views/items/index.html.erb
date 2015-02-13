@@ -13,6 +13,7 @@
       <th>Storage spot</th>
       <th>identifier</th>
          <th>Available?</th>
+         <th></th>
           </tr>
   </thead>
   <tbody>
@@ -24,7 +25,8 @@
       <td><%= item.description %></td>
       <td><%= item.storage %></td>
       <td><%= item.identifier %></td>
-       <td></td>
+      <td></td>
+       <td><%= link_to "Edit", edit_item_path(item) %></td>
       
     </tr>
 <% end %>
@@ -39,7 +41,8 @@
             <div class=".col-md-6 .col-md-offset-3">
                 <div class="btn-toolbar">
                     <div class="btn-group">
-                        <a href="/items/new" class="btn btn-lg btn-primary">Add an item</a>
+                    <%= link_to "Add an item", new_item_path, class: "btn btn-lg btn-primary" %>
+                        
                     </div>
                 </div>
 

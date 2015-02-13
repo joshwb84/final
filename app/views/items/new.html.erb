@@ -9,106 +9,48 @@
         <!-- Example row of columns -->
 
         <div class="row">
-            <div class="col-md-9 col-md-offset-1">
-            <br>
-                        <form class="form-horizontal">
-                      <fieldset>
-                         <legend><h1> Add an item</h1></legend>
-        
-                           
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label" for=
-                                    "name">Item Name</label>
+            
+  <legend><h1> Add an item</h1></legend>
 
-                                    <div class="col-lg-10">
-                                        <input class="form-control" id=
-                                        "name" placeholder=
-                                        "enter item name" type="text">
-                                    </div>
-                                </div>
+         <%= form_for @item do |form|%>
 
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label" for=
-                                    "description">Description</label>
-
-                                    <div class="col-lg-10">
-                                        <input class="form-control" id=
-                                        "description" placeholder="describe the item"
-                                        type="text">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label" for=
-                                    "storage">Where is it stored?</label>
-
-                                    <div class="col-lg-10">
-                                        <input class="form-control" id=
-                                        "storage" placeholder="Where is it stored" type=
-                                        "text">
-                                    </div>
-                                </div>
-  
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label" for=
-                                    "identifier">identifier</label>
-
-                                    <div class="col-lg-10">
-                                        <input class="form-control" id=
-                                        "identifier" placeholder="identifier"
-                                        type="text">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label" for=
-                                    "owner">Owner</label>
-
-                                    <div class="col-lg-10">
-                                        <input class="form-control" id=
-                                        "owner" placeholder="Who owns it?" type=
-                                        "text">
-                                    </div>
-                                </div>
+  <div class="form-group">
+    <%= form.label :name, class: "col-lg-2 control-label" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "enter item name" %>
+  </div>
+<div class="form-group">
+    <%= form.label :description, class: "col-lg-2 control-label" %>
+    <%= form.text_area :description, class: "form-control", placeholder: "please enter an item description" %>
+  </div>
 
 <div class="form-group">
-                                    <label class="col-lg-2 control-label" for=
-                                    "purchase_date">Purchase date</label>
+    <%= form.label :storage, class: "col-lg-2 control-label" %>
+    <%= form.text_field :storage, class: "form-control", placeholder: "where is it stored?" %>
+  </div>
 
-                                    <div class="col-lg-10">
-                                        <input class="form-control" id=
-                                        "purchase_date" placeholder="when was it bought?"
-                                        type="text">
-                                    </div>
-                                </div>
+<div class="form-group">
+    <%= form.label :identifier, class: "col-lg-2 control-label" %>
+    <%= form.text_field :identifier, class: "form-control", placeholder: "enter the identifier" %>
+  </div>
 
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label" for=
-                                    "purchase_price">Purchase Price</label>
+  <div class="form-group">
+    <%= form.label :owner, class: "col-lg-2 control-label" %>
+    <%= form.text_field :owner, class: "form-control", placeholder: "who owns it?" %>
+  </div>
 
-                                    <div class="col-lg-10">
-                                        <input class="form-control" id=
-                                        "purchase_price" placeholder="how much was it?"
-                                        type="text">
-                                    </div>
-                                </div>
+<div class="form-group">
+    <%= form.label :purchase_date, class: "col-lg-2 control-label" %>
+    <%= form.text_field :purchase_date, class: "form-control", placeholder: "when was it purchased?" %>
+  </div>
 
-                                <div class="form-group">
-                                    <div class="col-lg-10 col-lg-offset-2">
-                                        <button class="btn btn-success" type=
-                                        "submit">Add item</button>
-                                        
-                                        
-                                    </div>
-                                </div>
-                                    
-                            </fieldset>
-                        </form>
-                    
-               
-            </div>
-        </div>
+<div class="form-group">
+    <%= form.label :purchase_price, class: "col-lg-2 control-label" %>
+    <%= form.text_field :purchase_price, class: "form-control", placeholder: "how much was it? " %>
+  </div>
 
+  <%= form.button 'Add item to library', class: "btn btn-primary" %>
+ </div>
+<% end %>
         
     </div>
 </body>

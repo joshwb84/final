@@ -56,7 +56,7 @@ Rails.application.routes.draw do
 
   resources :items
   resources :users
-   resources :comments
+  resources :comments
 
   root to: 'home#home'
   get '/about', to: 'home#about'

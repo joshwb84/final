@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 def index
 @inventory = Item.all 
-
+  
 end
 
 def show
@@ -16,27 +16,31 @@ end
 end
 
 def new
+  @item = Item.new
 end
 
 def create
-# do something with params
+item_params = params.require(:item).permit(:name, :description, :storage, :identifier, :owner, :purchase_date, :purchase_price,)
+  Item.create(item_params)
+    redirect_to items_path
 end
 
 def edit
-# do something with params
+@item = Item.find_by(id: params["id"])
 end
 
 def update
-# do something with params
+item_params = params.require(:item).permit(:name, :description, :storage, :identifier, :owner, :purchase_date, :purchase_price,)
+@item = Item.find_by(id: params["id"])
+  @item.update(item_params)
+    redirect_to item_path
 end
 
 def destroy
-# do something with params
+    @item = Item.find_by(id: params["id"])
+    @item.destroy
+    redirect_to items_path
 end
-
-
-
-
 
 
 end
