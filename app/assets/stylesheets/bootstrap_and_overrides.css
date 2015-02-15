@@ -21,3 +21,13 @@ body {
        url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+
+/* Override Jumbotron background */
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url('burningman.jpg');
+    background-position: 0% 55%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    }

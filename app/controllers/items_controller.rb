@@ -1,18 +1,14 @@
 class ItemsController < ApplicationController
 def index
-@inventory = Item.all 
-  
+@inventories = Item.all
+@inventory = @inventories.sort_by {|h| h[:category_id]}
+@category = Category.all
 end
 
 def show
 # do something with params
 @item = Item.find_by(id: params["id"])
-@category = Category.find_by(id: @item.category_id)
-@comments = Comment.where(item_id: @item.id)
-@users = []
-@comments.each do |role|
-  @users << User.find_by(id: role.user_id)
-end
+@comments = @item.comments
 end
 
 def new

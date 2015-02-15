@@ -16,9 +16,9 @@ Comment.delete_all
 
 # Create the category
 puts "Creating categories..."
-electrical = Category.create(name: "Electrical equipment")
-sound = Category.create(name: "Sound equipment")
-rcc = Category.create(name: "RCC equipment")
+electrical = Category.create(name: "Electrical equipment", description:"All our of electical equipment like cords")
+sound = Category.create(name: "Sound equipment", description:"All our of sound equipment like spearkers")
+rcc = Category.create(name: "RCC equipment", description:"All our of rcc equipment like wagon cover")
 
 # Create the users
 puts "Creating your Users dog..."
@@ -48,10 +48,10 @@ rental_six = Rental.create(item_id: item_five.id,user_id: user_one.id,rental_dat
 
 # Create the comments
 puts "Creating your comments..."
-comment_one = Comment.create(item_id: item_one.id,user_id: user_four.id,remark: "shit works well")
-comment_two = Comment.create(item_id: item_two.id,user_id: user_one.id,remark: "replace soon")
-comment_three = Comment.create(item_id: item_four.id,user_id: user_three.id,remark: "make sure to also checkout the laptop to run this")
-comment_four = Comment.create(item_id: item_two.id,user_id: user_five.id,remark: "a few LEDs missing")
-comment_five = Comment.create(item_id: item_three.id,user_id: user_two.id,remark: "Broken")
+comment_one = Comment.create(item_id: item_one.id,user_id: user_four.id,body: "shit works well")
+comment_two = Comment.create(item_id: item_two.id,user_id: user_one.id,body: "replace soon")
+comment_three = Comment.create(item_id: item_four.id,user_id: user_three.id,body: "make sure to also checkout the laptop to run this")
+comment_four = Comment.create(item_id: item_two.id,user_id: user_five.id,body: "a few LEDs missing")
+comment_five = Comment.create(item_id: item_three.id,user_id: user_two.id,body: "Broken")
 
 puts "A total of #{Item.count} items are in the database. #{Rental.count} rentals have occurred and there are #{User.count} users registered."

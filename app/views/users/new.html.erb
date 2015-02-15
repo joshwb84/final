@@ -1,88 +1,40 @@
-<% provide(:title, 'Create') %>
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title></title>
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="container">
-        <!-- Example row of columns -->
-
-        <div class="row">
-            <div class="col-md-9 col-md-offset-1">
-            <br>
-                        <form class="form-horizontal">
-                      <fieldset>
-                         <legend><h1> Event Details</h1></legend>
-        
-                           
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label" for=
-                                    "inputEventname">Event name</label>
-
-                                    <div class="col-lg-10">
-                                        <input class="form-control" id=
-                                        "inputEventname" placeholder=
-                                        "Short distinct name" type="text">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label" for=
-                                    "inputLocation">Location</label>
-
-                                    <div class="col-lg-10">
-                                        <input class="form-control" id=
-                                        "inputLocation" placeholder="Quick location"
-                                        type="text">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label" for=
-                                    "inputEmail">Email</label>
-
-                                    <div class="col-lg-10">
-                                        <input class="form-control" id=
-                                        "inputEmail" placeholder="Email" type=
-                                        "text">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label" for=
-                                    "inputPassword">Password</label>
-
-                                    <div class="col-lg-10">
-                                        <input class="form-control" id=
-                                        "inputPassword" placeholder="Password"
-                                        type="password">
-
-                                    <div class="checkbox">
-                                        <label><input type="checkbox">You have read and agree to the <a href="/terms">Terms of service</a>.</label>
-                                    </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-lg-10 col-lg-offset-2">
-                                        <button class="btn btn-success" type=
-                                        "submit">Create my account</button>
-                                        
-                                        
-                                    </div>
-                                </div>
-                                    
-                            </fieldset>
-                        </form>
-                    
-               
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h2 class="text-center">Create an account</h2>
+          <br>
+          <div class="panel panel-primary">
+            <div class="panel-body">
+              <%= form_for @user do |form| %>
+              <div class="form-group">
+                <%= form.label :name, class: "col-lg-2 control-label" %>
+                <%= form.text_field :name, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :play_name, class: "col-lg-2 control-label" %>
+                <%= form.text_field :playa_name, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :email, class: "col-lg-2 control-label" %>
+                <%= form.text_field :email, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :password, class: "col-lg-2 control-label" %>
+                <%= form.text_field :password, class: "form-control" %>
+              </div>
+              <%= form.button 'Submit', class: "btn btn-success" %>
+              <% end %>
             </div>
+          </div>
         </div>
-
-        
+      </div>
     </div>
-</body>
+  </body>
 </html>

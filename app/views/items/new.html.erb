@@ -16,7 +16,7 @@
 
   <div class="form-group">
     <%= form.label :category_id, class: "col-lg-2 control-label" %>
-   <%= form.select :category_id, Category.all.collect{ |c| [c.name, c.id] },class: "form-control" %>
+   <%= form.select :category_id, Category.all.collect{ |c| [c.name, c.id] },{}, html_options = {class: "form-control"} %>
   </div>
 
   <div class="form-group">

@@ -1,33 +1,26 @@
-<% provide(:title, 'Events') %>
-  
-
+<% provide(:title, @item.name) %>
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-
-    <b>
+      <b>
       Item Name: </b>
       <%= @item.name %><br>
       <b>
       Category: </b>
-      <%= @category.name %><br>
+      <%= @item.category.name %><br>
       <b>
       Identifier date: </b>
       <%= @item.identifier %><br>
       <b>
       Item description:</b>
       <%= @item.description %><br>
-
-<br>
-<b>Comments:</b>
-<% @comments.each do |poop| %>
-<p><% @users.each do |pee| %><%= pee.name %>
-<% end%> says: </p>
-<p class="text-warning"><%= poop.remark %></p>
-<% end%>
-
-
-
+      <br>
+      <b>Comments:</b>
+      <% @comments.each do |comment| %>
+      <p> <%= comment.user.playa_name %> says: 
+      </p>
+      <p class="text-warning"><%= comment.body %></p>
+      <% end%>
     </div>
     <div class="col-md-6">
       <b>
@@ -44,13 +37,11 @@
       <%= @item.purchase_price %><br>
     </div>
   </div>
- </div>
+</div>
 <div class="container">
-        <div class="row">
-            <div class=".col-md-6 .col-md-offset-2">
-                        <%= link_to "Edit item in library", edit_item_path, class: "btn btn-primary" %>
-            </div>
-        </div>
-      
-
+  <div class="row">
+    <div class=".col-md-6 .col-md-offset-2">
+      <%= link_to "Edit item in library", edit_item_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>

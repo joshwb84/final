@@ -1,5 +1,6 @@
 Category:
   name: string
+  description: text
 
 User:
   name: string
@@ -26,5 +27,5 @@ Rental:
 Comment:
   item_id: integer
   user_id: integer
-  remark: text
+  body: text
   

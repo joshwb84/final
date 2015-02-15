@@ -15,12 +15,13 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.text   "description"
   end
 
   create_table "comments", force: :cascade do |t|
     t.integer "item_id"
     t.integer "user_id"
-    t.text    "remark"
+    t.text    "body"
   end
 
   add_index "comments", ["item_id"], name: "index_comments_on_item_id"
