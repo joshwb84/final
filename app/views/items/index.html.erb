@@ -18,7 +18,7 @@
    <tbody>
       <% @inventory.each do |item| %>
       <tr>
-         <td><%= item.category.name%></td>
+         <td><%= link_to item.category.name, category_path( item.category_id)%></td>
          <td><a href="/items/<%= item.id %>"><%= item.name %></a></td>
          <td><%= item.description %></td>
          <td><%= item.storage %></td>
