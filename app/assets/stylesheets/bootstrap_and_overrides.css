@@ -1,4 +1,8 @@
 @import "bootstrap.min";
+@import "bootstrap-sprockets";
+
+
+
 /*OVER RIDE because its changing colors @import "bootstrap-theme.min"; */ 
 
 /* Move down content because we have a fixed navbar that is 60px tall */
