@@ -51,10 +51,14 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "rentals", ["user_id"], name: "index_rentals_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "playa_name"
-    t.string "email"
-    t.string "password"
+    t.string  "name"
+    t.string  "playa_name"
+    t.string  "email"
+    t.string  "password_digest"
+    t.string  "phone"
+    t.string  "facebook"
+    t.text    "description"
+    t.boolean "admin",           default: false
   end
 
 end

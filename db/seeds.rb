@@ -22,11 +22,11 @@ rcc = Category.create(name: "RCC equipment", description:"All our of rcc equipme
 
 # Create the users
 puts "Creating your Users dog..."
-user_one = User.create(name: "John Billy",playa_name: "butt wax",email: "John@aol.com",password: "slipknow23")
-user_two = User.create(name: "Alex Smart",playa_name: "speed",email: "smartalex@gmail.com",password: "AAlex123")
-user_three = User.create(name: "Steph Graph",playa_name: "Warp",email: "Graphme@hotmail.com",password: "Steph123")
-user_four = User.create(name: "Brian Eno",playa_name: "butter boy",email: "EnosMusic@yahoo.com",password: "BrianKnowsPW")
-user_five = User.create(name: "Laura bobbit",playa_name: "hot pocket",email: "laura@gmail.com",password: "lauraspassword")
+user_one = User.create(name: "John Billy",playa_name: "butt wax",email: "John@aol.com",password: "slipknow23",phone: "1234561234",facebook: "whoknow.me",description: "I'm very cool", admin: "0")
+user_two = User.create(name: "Alex Smart",playa_name: "speed",email: "smartalex@gmail.com",password: "AAlex123",phone: "1234561234",facebook: "whoknow.me",description: "I'm very cool", admin: "0")
+user_three = User.create(name: "Steph Graph",playa_name: "Warp",email: "Graphme@hotmail.com",password: "Steph123",phone: "1234561234",facebook: "whoknow.me",description: "I'm very cool", admin: "0")
+user_four = User.create(name: "Brian Eno",playa_name: "butter boy",email: "EnosMusic@yahoo.com",password: "BrianKnowsPW",phone: "1234561234",facebook: "whoknow.me",description: "I'm very cool", admin: "0")
+user_five = User.create(name: "Laura bobbit",playa_name: "hot pocket",email: "laura@gmail.com",password: "1234",phone: "1234561234",facebook: "whoknow.me",description: "I'm very cool", admin: "1")
 
 
 # Create the items

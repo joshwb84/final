@@ -8,6 +8,16 @@
     <div class="container">
         <!-- Example row of columns -->
 
+<% if @category.errors.any? %>
+  <div class="alert alert-warning">
+    <ul>
+      <% @category.errors.full_messages.each do |message| %>
+        <li><b><%= message %></b></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
         <div class="row">
             
   <legend><h1> Add a category</h1></legend>

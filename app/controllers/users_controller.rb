@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+skip_before_action :require_user, only: [:new,:create,]
+
 def index
 @population = User.all
 end
@@ -15,9 +17,14 @@ def new
 end
 
 def create
-item_params = params.require(:user).permit(:name, :playa_name, :email, :password)
-  User.create(item_params)
-    redirect_to user_path
+user_params = params.require(:user).permit(:name, :playa_name, :email, :password, :phone, :facebook, :description)
+  @user = User.create(user_params)
+    if @user.valid?
+      redirect_to root_path, notice: "You're account was created successfully"
+    else 
+      render "new"
+      User.name
+    end
 end
 
 def edit
@@ -25,16 +32,20 @@ def edit
 end
 
 def update
-item_params = params.require(:user).permit(:name, :playa_name, :email, :password)
-@user = User.find_by(id: params["id"])
-  @user.update(item_params)
-    redirect_to user_path
+user_params = params.require(:user).permit(:name, :playa_name, :email, :password, :phone, :facebook, :description)
+  @user = User.find_by(id: params["id"])
+    if @user.update_attributes(user_params)
+      redirect_to user_path, notice: "You're account was updated successfully"
+    else 
+      render "new", alert: "Please recheck the errors below"
+      User.name
+    end
 end
 
 def destroy
     @user = User.find_by(id: params["id"])
     @user.destroy
-    redirect_to items_path
+    redirect_to root_path
 end
 
 

@@ -9,51 +9,76 @@
         <!-- Example row of columns -->
 
         <div class="row">
+
+
             
   <legend><h1> Add an item</h1></legend>
 
-         <%= form_for @item do |form|%>
-
+         <%= form_for @item, :html => {:class => "form-horizontal"}  do |form|%>
+  <%= render 'shared/error_messages', object: @item %>
   <div class="form-group">
     <%= form.label :category_id, class: "col-lg-2 control-label" %>
-   <%= form.select :category_id, Category.all.collect{ |c| [c.name, c.id] },{}, html_options = {class: "form-control"} %>
+   <div class="col-lg-2">
+   <%= form.select :category_id, Category.all.collect{ |c| [c.name, c.id] },{include_blank: true}, html_options = {class: "form-control"} %>
   </div>
-
+</div>
   <div class="form-group">
     <%= form.label :name, class: "col-lg-2 control-label" %>
+    <div class="col-lg-6">
     <%= form.text_field :name, class: "form-control", placeholder: "enter item name" %>
+    </div>
   </div>
 <div class="form-group">
     <%= form.label :description, class: "col-lg-2 control-label" %>
+    <div class="col-lg-6">
     <%= form.text_area :description, class: "form-control", placeholder: "please enter an item description" %>
+    </div>
   </div>
 
 <div class="form-group">
     <%= form.label :storage, class: "col-lg-2 control-label" %>
+    <div class="col-lg-6">
     <%= form.text_field :storage, class: "form-control", placeholder: "where is it stored?" %>
+    </div>
   </div>
 
 <div class="form-group">
     <%= form.label :identifier, class: "col-lg-2 control-label" %>
+    <div class="col-lg-6">
     <%= form.text_field :identifier, class: "form-control", placeholder: "enter the identifier" %>
+    </div>
   </div>
 
   <div class="form-group">
     <%= form.label :owner, class: "col-lg-2 control-label" %>
+    <div class="col-lg-6">
     <%= form.text_field :owner, class: "form-control", placeholder: "who owns it?" %>
+    </div>
   </div>
 
 <div class="form-group">
     <%= form.label :purchase_date, class: "col-lg-2 control-label" %>
+    <div class="col-lg-6">
     <%= form.text_field :purchase_date, class: "form-control", placeholder: "when was it purchased?" %>
+    </div>
   </div>
 
 <div class="form-group">
     <%= form.label :purchase_price, class: "col-lg-2 control-label" %>
+    <div class="col-lg-6">
     <%= form.text_field :purchase_price, class: "form-control", placeholder: "how much was it? " %>
+    </div>
   </div>
 
-  <%= form.button 'Add item to library', class: "btn btn-primary" %>
+<div class="form-group">
+    <%= form.label " ", class: "col-lg-2 control-label" %>
+    <div class="col-lg-6">
+    <%= form.button 'Add item to library', class: "btn btn-primary" %>
+    </div>
+  </div>
+
+
+  
  </div>
 <% end %>
         

@@ -6,7 +6,11 @@ User:
   name: string
   playa_name: string
   email: string
-  password: string
+  password_digest: string
+  phone: string
+  facebook: string
+  description: text
+  admin: boolean
 
 Item:
   category_id: integer

@@ -58,13 +58,16 @@ Rails.application.routes.draw do
   resources :users
   resources :comments
   resources :categories
+  resources :sessions
 
   root to: 'home#home'
   get '/about', to: 'home#about'
   get '/blog', to: 'home#blog'
   get '/terms', to: 'home#terms'
-  get '/signin', to: 'home#signin'
-  get '/register', to: 'home#register'
+  get '/signin', to: 'sessions#new'
+  get '/signout', to: 'sessions#destroy'
+  get '/register', to: 'users#new'
   get '/home', to: redirect('/')
+
   
 end

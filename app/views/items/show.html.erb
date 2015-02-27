@@ -1,47 +1,50 @@
 <% provide(:title, @item.name) %>
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <b>
-      Item Name: </b>
-      <%= @item.name %><br>
-      <b>
-      Category: </b>
-      <%= @item.category.name %><br>
-      <b>
-      Identifier date: </b>
-      <%= @item.identifier %><br>
-      <b>
-      Item description:</b>
-      <%= @item.description %><br>
-      <br>
-      <b>Comments:</b>
+
+<hr class="">
+<div class="container target">
+    <div class="row">
+        <div class="col-sm-10">
+             <h1 class=""><%= @item.name %> </h1>
+             <p class="lead"> <b>Description:</b> <%= @item.description %> </p>
+<br>
+        </div>
+      <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.rlsandbox.com/img/profile.jpg"></a>
+
+        </div>
+    </div>
+  <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <!--left col-->
+            <ul class="list-group">
+                <li class="list-group-item text-muted" contenteditable="false">Details</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Category</strong></span> <%= link_to @item.category.name, category_path( @item.category_id)%></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Storage:</strong></span> <%= @item.storage %></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Identifier:</strong></span> <%= @item.identifier %></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Owner:</strong></span> <%= @item.owner %></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Purchased on:</strong></span> <%= @item.purchase_date %></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Original price:</strong></span> <%= @item.purchase_price %></li>
+            </ul>
+           
+            
+                <%= link_to "Edit item", edit_item_path, class: "btn  btn-primary"%>  
+
+                
+        </div>
+        <!--/col-3-->
+        <div class="col-sm-6" contenteditable="false" style="">
+            <div class="panel panel-default">
+                <div class="panel-heading">Comments about <%= @item.name %></div>
+                <div class="panel-body"> 
       <% @comments.each do |comment| %>
-      <p> <%= comment.user.playa_name %> says: 
-      </p>
-      <p class="text-warning"><%= comment.body %></p>
-      <% end%>
-    </div>
-    <div class="col-md-6">
-      <b>
-      Storage: </b>
-      <%= @item.storage %><br>
-      <b>
-      Owner: </b>
-      <%= @item.owner %><br>
-      <b>
-      purchase date: </b>
-      <%= @item.purchase_date %><br>
-      <b>
-      Purchase price: </b>
-      <%= @item.purchase_price %><br>
-    </div>
-  </div>
+      <blockquote>
+  <p><%= comment.body %></p><small><%= link_to comment.user.name, user_path(comment.user) %> </small>
+</blockquote>
+ <% end %>
 </div>
-<div class="container">
-  <div class="row">
-    <div class=".col-md-6 .col-md-offset-2">
-      <%= link_to "Edit item in library", edit_item_path, class: "btn btn-primary" %>
-    </div>
-  </div>
-</div>
+            </div>
+           
+
+           </div>
+        </div>
+        

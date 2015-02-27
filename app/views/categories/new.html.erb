@@ -9,7 +9,17 @@
         <!-- Example row of columns -->
 
         <div class="row">
-            
+
+<% if @category.errors.any? %>
+  <div class="alert alert-warning">
+    <ul>
+      <% @category.errors.full_messages.each do |message| %>
+        <li><b><%= message %></b></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
   <legend><h1> Add a category</h1></legend>
 
          <%= form_for @category do |form|%>

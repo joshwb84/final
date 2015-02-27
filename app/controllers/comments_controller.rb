@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+skip_before_action :require_user, only: [:show]
+
 def index
 @comments = Comment.all
 end

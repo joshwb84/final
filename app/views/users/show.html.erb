@@ -1,13 +1,58 @@
 <% provide(:title, 'Account page') %>
 
-   
+<hr class="">
+<div class="container target">
+    <div class="row">
+        <div class="col-sm-10">
+             <h1 class=""><%= @user.name %> </h1>
+           <div class="btn-group"><%= link_to "Edit my details", edit_user_path(current_user), class: "btn  btn-default"%></div> 
 
-<h2><%= @user.name %></h2>
-<h2><%= @user.playa_name %></h2>
+    
+<br>
+        </div>
+      <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.rlsandbox.com/img/profile.jpg"></a>
 
-<h2><%= @user.email %></h2>
+        </div>
+    </div>
+  <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <!--left col-->
+            <ul class="list-group">
+                <li class="list-group-item text-muted" contenteditable="false">Details</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Playa Name</strong></span> <%= @user.playa_name %></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <%= @user.email %></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Phone</strong></span> <%= @user.phone %></li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Items owned</strong></span> #</li>
+              
+            </ul>
+           
+            <div class="panel panel-default">
+                <div class="panel-heading">Social Media</div>
+                <div class="panel-body">  <i class="fa fa-facebook fa-2x"><a href="https://www.facebook.com/<%= @user.facebook %>"><%= image_tag "FB-f-Logo__blue_50.png"%></a></i>  
 
-<% @comments.each do |comment| %>
-  <li><p>Regarding the <%= link_to comment.item.name, item_path(comment.item) %>, <%= @user.playa_name %> said "<%= comment.body %>"</p></li>
-<% end %>
+                </div>
+            </div>
+        </div>
+        <!--/col-3-->
+        <div class="col-sm-9" contenteditable="false" style="">
+            <div class="panel panel-default">
+                <div class="panel-heading"><%= @user.playa_name %>'s Bio</div>
+                <div class="panel-body"> <%= @user.description %></div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading"><%= @user.playa_name %>'s Comments</div>
+                <div class="panel-body"> 
+      <% @comments.each do |comment| %>
+      <blockquote>
+  
+</blockquote>
+ <% end %>
+</div>
+            </div>
+           
 
+           </div>
+        </div>
+        
