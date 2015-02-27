@@ -1,4 +1,3 @@
-
 @import "bootstrap-sprockets";
 
 /*OVER RIDE because its changing colors @import "bootstrap-theme.min"; */ 
@@ -20,7 +19,7 @@ body {
 }
 /* Override Rail's default error calls with Bootstrap 3 */
 .field_with_errors {
-  @extend .has-error; !optional
+  @extend .has-error; 
 }
 
 
@@ -38,7 +37,7 @@ body {
 /* Override Jumbotron background */
 .jumbotron {
     margin-bottom: 0px;
-    background-image:url('<%= asset_path("burningman.jpg") %> ');
+    background-image: url('<%= asset_path("burningman.jpg") %> ');
     background-position: 0% 55%;
     background-size: cover;
     background-repeat: no-repeat;
