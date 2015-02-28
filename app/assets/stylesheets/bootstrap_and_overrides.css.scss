@@ -1,6 +1,5 @@
 @import "bootstrap-sprockets";
 
-/*OVER RIDE because its changing colors @import "bootstrap-theme.min"; */ 
 
 /* Move down content because we have a fixed navbar that is 60px tall */
 body {
@@ -17,9 +16,10 @@ body {
     margin: 0 0 18px 0;
   }
 }
+
 /* Override Rail's default error calls with Bootstrap 3 */
 .field_with_errors {
-  @extend .has-error; 
+  @extend .has-error !optional
 }
 
 
@@ -37,11 +37,11 @@ body {
 /* Override Jumbotron background */
 .jumbotron {
     margin-bottom: 0px;
-    background-image: url("burningman.jpg") ;
+    background-image: image-url("burningman.jpg") ;
     background-position: 0% 55%;
     background-size: cover;
     background-repeat: no-repeat;
-    color: white;
+    color: white !important;
     }
 
   
